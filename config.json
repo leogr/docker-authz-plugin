@@ -1,0 +1,14 @@
+{
+    "Description": "Authorization plugin for Docker",
+    "Documentation": "https://github.com/leogr/docker-authz-plugin/blob/master/README.md",
+    "Entrypoint": [
+      "/bin/docker-authz-plugin"
+    ],
+  
+    "Interface": {
+      "Socket": "docker-authz-plugin.sock",
+      "Types": [
+        "docker.authz/1.0"
+      ]
+    }
+  }
