@@ -6,7 +6,7 @@
     ],
   
     "Interface": {
-      "Socket": "docker-authz-plugin.sock",
+      "Socket": "authz-plugin.sock",
       "Types": [
         "docker.authz/1.0"
       ]
