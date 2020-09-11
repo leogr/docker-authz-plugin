@@ -15,7 +15,7 @@ func main() {
 
 	h := authorization.NewHandler(plugin)
 
-	if err := h.ServeUnix("docker-authz-plugin", 0); err != nil {
+	if err := h.ServeUnix("authz-plugin", 0); err != nil {
 		logrus.Fatal(err)
 	}
 }
