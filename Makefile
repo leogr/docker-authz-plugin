@@ -10,7 +10,7 @@ export GO111MODULE=on
 
 .PHONY: docker-authz-plugin
 docker-authz-plugin:
-	$(GO) build -o $@ .
+	$(GO) build -a -tags netgo -ldflags '-extldflags "-static"' -o $@ .
 
 .PHONY: plugin
 plugin: clean
@@ -23,12 +23,12 @@ plugin: clean
 
 .PHONY: create
 create: plugin
-	@$(DOCKER) plugin rm -f $(PLUGIN_NAME):${PLUGIN_TAG} || true
-	$(DOCKER) plugin create ${PLUGIN_NAME}:${PLUGIN_TAG} ./plugin
+	@$(DOCKER) plugin rm -f "$(PLUGIN_NAME):${PLUGIN_TAG}" || true
+	$(DOCKER) plugin create "${PLUGIN_NAME}:${PLUGIN_TAG}" ./plugin
 
 .PHONY: install
 install: 
-	$(DOCKER) plugin install ${PLUGIN_NAME}:${PLUGIN_TAG}
+	$(DOCKER) plugin install "${PLUGIN_NAME}:${PLUGIN_TAG}"
 
 .PHONY: clean
 clean:
