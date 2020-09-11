@@ -30,7 +30,8 @@ First, prepare your project:
 
 Then create and install your plugin:
 - `make create` builds the plugin and add it to your local Docker
-- `make install` tells Docker to enable and install the plugin
+- `make enable` tells Docker to enable the plugin
+> If you want to to use a remote registry, use `docker plugin push` and `docker plugin install` instead of `make enable`
 
 With the plugin installed and enabled, the Docker daemon needs to be configured to make use of the plugin. This can be done by editing the daemon's configuration file (eg. `/etc/docker/daemon.json`):
 ```json

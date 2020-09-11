@@ -26,9 +26,9 @@ create: plugin
 	@$(DOCKER) plugin rm -f "$(PLUGIN_NAME):${PLUGIN_TAG}" || true
 	$(DOCKER) plugin create "${PLUGIN_NAME}:${PLUGIN_TAG}" ./plugin
 
-.PHONY: install
+.PHONY: enable
 install: 
-	$(DOCKER) plugin install "${PLUGIN_NAME}:${PLUGIN_TAG}"
+	$(DOCKER) plugin enable "${PLUGIN_NAME}:${PLUGIN_TAG}"
 
 .PHONY: clean
 clean:
