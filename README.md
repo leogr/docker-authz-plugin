@@ -36,7 +36,7 @@ Then create and install your plugin:
 With the plugin installed and enabled, the Docker daemon needs to be configured to make use of the plugin. This can be done by editing the daemon's configuration file (eg. `/etc/docker/daemon.json`):
 ```json
 {
-    "authorization-plugins": ["leogr/docker-authz-plugin"]
+    "authorization-plugins": ["leogr/docker-authz-plugin:dev"]
 }
 ```
 > Please, use your plugin name if you had renamed it.
